@@ -12,10 +12,12 @@ import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.spigotmc.event.entity.EntityDismountEvent;
 
+import java.util.Objects;
+
 public class ChairListener implements Listener {
     @EventHandler
     public void onPlayerInteract (PlayerInteractEvent e) {
-        if (e.getAction() == Action.RIGHT_CLICK_BLOCK && e.getHand().equals(EquipmentSlot.HAND) && (e.getClickedBlock().getType().name().contains("STAIRS") || e.getClickedBlock().getType().name().contains("SLAB"))) {
+        if (e.getAction() == Action.RIGHT_CLICK_BLOCK && Objects.equals(e.getHand(), EquipmentSlot.HAND) && (e.getClickedBlock().getType().name().contains("STAIRS") || e.getClickedBlock().getType().name().contains("SLAB"))) {
             if (!Main.isOccupied(e.getClickedBlock())) {
             Main.sit(e.getPlayer(), e.getClickedBlock());
             }

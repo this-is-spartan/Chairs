@@ -1,0 +1,6 @@
+name: Main
+version: ${project.version}
+main: me.vomet.chairs.main.Main
+api-version: 1.16
+authors: [ Vomet ]
+description: Chairs plugin made by ahmed.jar#0001
